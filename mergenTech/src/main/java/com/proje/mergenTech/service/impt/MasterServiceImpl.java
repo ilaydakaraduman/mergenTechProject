@@ -24,6 +24,9 @@ public class MasterServiceImpl implements MasterService {
     private final ThRepository thRepository;
 
 
+    //deg
+
+
     @PersistenceUnit
    private EntityManagerFactory entityManagerFactory ;
 
