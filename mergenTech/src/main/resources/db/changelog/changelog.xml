@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <!--    <changeSet author="admin" id="1">-->
+    <!--        <createTable tableName="MASTER">-->
+    <!--            <column name="M_ID" type="BIGINT">-->
+    <!--                <constraints primaryKey="true"/>-->
+    <!--            </column>-->
+    <!--            <column name="HOSPITAL_NAME" type="VARCHAR(255)">-->
+    <!--                <constraints nullable="false"/>-->
+    <!--            </column>-->
+    <!--            <column name="USER_CODE" type="VARCHAR(255)">-->
+    <!--                <constraints nullable="false"/>-->
+    <!--            </column>-->
+    <!--            <column name="MESSAGE_DESCRIBE" type="VARCHAR(255)">-->
+    <!--                <constraints nullable="false"/>-->
+    <!--            </column>-->
+    <!--            <column name="MAC_ADDRESS" type="VARCHAR(255)">-->
+    <!--                <constraints nullable="false"/>-->
+    <!--            </column>-->
+    <!--            <column name="IP_ADDRESS" type="VARCHAR(255)">-->
+    <!--                <constraints nullable="false"/>-->
+    <!--            </column>-->
+    <!--            <column name="TIME" type="date">-->
+    <!--                <constraints nullable="false"/>-->
+    <!--            </column>-->
+    <!--        </createTable>-->
+    <!--    </changeSet>-->
+
+    <!--    <changeSet author="admin" id="2">-->
+    <!--        <createSequence maxValue="9223372036854775807" sequenceName="SEQ_MASTER" startValue="1"/>-->
+    <!--    </changeSet>-->
+
+    <!--    <changeSet author="admin" id="3">-->
+    <!--        <sql endDelimiter="\nGO" splitStatements="true" stripComments="true">-->
+    <!--            CREATE OR REPLACE TRIGGER "TRI_MASTER" BEFORE-->
+    <!--            INSERT ON "MASTER" REFERENCING OLD AS OLD NEW AS NEW FOR EACH ROW-->
+    <!--            BEGIN-->
+    <!--            if :NEW.M_ID is null then-->
+    <!--            SELECT SEQ_MASTER.NEXTVAL INTO :NEW.M_ID FROM dual;-->
+    <!--            end if;-->
+    <!--            END;-->
+    <!--        </sql>-->
+    <!--    </changeSet>-->
+
+    <!--    <changeSet author="admin" id="4">-->
+    <!--        <createTable tableName="THROWABLE">-->
+    <!--            <column name="DETAYLAR_ID" type="BIGINT">-->
+    <!--                <constraints primaryKey="true"/>-->
+    <!--            </column>-->
+    <!--            <column name="CLASS_NAME" type="varchar(255)">-->
+    <!--                <constraints nullable="false"/>-->
+    <!--            </column>-->
+    <!--            <column name="FILE_NAME" type="VARCHAR(255)">-->
+    <!--                <constraints nullable="false"/>-->
+    <!--            </column>-->
+    <!--            <column name="METHOD_NAME" type="VARCHAR(255)">-->
+    <!--                <constraints nullable="false"/>-->
+    <!--            </column>-->
+    <!--            <column name="LINE_NUMBER" type="VARCHAR(255)">-->
+    <!--                <constraints nullable="false"/>-->
+    <!--            </column>-->
+    <!--            <column name="MASTER_M_ID" type="BIGINT">-->
+    <!--                <constraints nullable="true"/>-->
+    <!--            </column>-->
+    <!--        </createTable>-->
+    <!--        <addForeignKeyConstraint baseTableName="THROWABLE" baseColumnNames="MASTER_M_ID" constraintName="fk_constrait_throwable_id"-->
+    <!--                                 referencedTableName="MASTER"-->
+    <!--                                 referencedColumnNames="M_ID"/>-->
+
+    <!--    </changeSet>-->
+    <!--        <changeSet author="admin" id="5">-->
+    <!--            <createSequence maxValue="9223372036854775807" sequenceName="SEQ_THROWABLE" startValue="1"/>-->
+    <!--        </changeSet>-->
+    <!--        <changeSet author="admin" id="6">-->
+    <!--            <sql endDelimiter="\nGO" splitStatements="true" stripComments="true">-->
+    <!--                CREATE OR REPLACE TRIGGER "TRI_THROWABLE" BEFORE-->
+    <!--                INSERT ON "THROWABLE" REFERENCING OLD AS OLD NEW AS NEW FOR EACH ROW-->
+    <!--                BEGIN-->
+    <!--                if :NEW.DETAYLAR_ID is null then-->
+    <!--                SELECT SEQ_THROWABLE.NEXTVAL INTO :NEW.DETAYLAR_ID FROM dual;-->
+    <!--                end if;-->
+    <!--                END;-->
+    <!--            </sql>-->
+    <!--        </changeSet>-->
+
+
+</databaseChangeLog>
